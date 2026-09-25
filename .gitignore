@@ -3,6 +3,7 @@ data/*
 !data/README.md
 *.zip
 *.csv
+!reports/tablas/*.csv
 *.parquet
 *.pkl
 *.joblib
