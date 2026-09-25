@@ -7,4 +7,5 @@ scikit-learn>=1.4
 nltk>=3.8
 ipykernel>=6.29
 tqdm>=4.66
-# Detección de idioma: pendiente de decidir (p. ej. langdetect, lingua-language-detector o fastText lid.176)
+lingua-language-detector>=2.0   # detección de idioma (src/muestra.py)
+nbclient>=0.10
