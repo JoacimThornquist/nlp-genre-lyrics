@@ -12,3 +12,8 @@ nbclient>=0.10
 xgboost>=2.0                    # modelos sobre rasgos (notebooks 03 y 05)
 spacy>=3.7                      # categorías gramaticales (src/rasgos.py)
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+statsmodels>=0.14               # prueba de McNemar
+umap-learn>=0.5                 # reducción de dimensión para el agrupamiento (P3)
+transformers>=4.44              # embeddings y transformers (P2)
+sentence-transformers>=3.0
+torch>=2.3                      # con GPU NVIDIA, instalar la versión CUDA indicada en pytorch.org
