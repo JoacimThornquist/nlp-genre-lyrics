@@ -10,7 +10,7 @@ data/*
 *.pt
 *.bin
 
-# Borradores locales del informe (el informe vive en Google Docs)
+# Documentos de Office
 *.docx
 ~$*
 
