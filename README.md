@@ -51,5 +51,5 @@ python tests/test_rasgos.py  # pruebas de los rasgos con estrofas anotadas a man
 ```
 
 Después, correr los notebooks de `notebooks/` en orden: `01_eda.ipynb` (~5 min), `02_rasgos.ipynb` (menos de un
-minuto) y `03_modelos_rasgos.ipynb` (~45 min en CPU) y
+minuto), `03_modelos_rasgos.ipynb` (~45 min en CPU) y
 `06_pop_residual.ipynb` (~16 min).
