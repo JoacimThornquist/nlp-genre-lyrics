@@ -24,7 +24,7 @@ defecto. Detalle en `notebooks/01_eda.ipynb`.
 
 ```
 data/          datos (no versionados)
-notebooks/     análisis numerados (01_eda, 02_rasgos, 03_modelos_rasgos, ...)
+notebooks/     análisis numerados (01_eda, 02_rasgos, 03_modelos_rasgos, 06_pop_residual, ...)
 src/datos.py   lectura por partes del zip, conteos y limpieza de encabezados
 src/muestra.py metadatos del dataset completo y construcción de la muestra
 src/evaluacion.py  protocolo común: particiones por artista, predicciones fuera de muestra, métricas, registro
@@ -51,4 +51,5 @@ python tests/test_rasgos.py  # pruebas de los rasgos con estrofas anotadas a man
 ```
 
 Después, correr los notebooks de `notebooks/` en orden: `01_eda.ipynb` (~5 min), `02_rasgos.ipynb` (menos de un
-minuto) y `03_modelos_rasgos.ipynb` (~45 min en CPU).
+minuto) y `03_modelos_rasgos.ipynb` (~45 min en CPU) y
+`06_pop_residual.ipynb` (~16 min).
