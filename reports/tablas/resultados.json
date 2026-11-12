@@ -1,0 +1,694 @@
+{
+ "modelos": [
+  {
+   "modelo": "Clase mayoritaria",
+   "archivo": "M0_mayoritaria",
+   "canciones": 50000,
+   "macro-F1": 0.0666666667,
+   "IC inf": 0.0636076904,
+   "IC sup": 0.0699722231,
+   "Pop": 0.0,
+   "Rap": 0.0,
+   "Rock": 0.0,
+   "R&B": 0.0,
+   "Country": 0.3333333333,
+   "Δ vs texto": -0.5338330069,
+   "Δ IC inf": -0.5383482718,
+   "Δ IC sup": -0.5291265848
+  },
+  {
+   "modelo": "Forma pura (24 rasgos) + XGBoost",
+   "archivo": "M2_xgb_forma_pura",
+   "canciones": 50000,
+   "macro-F1": 0.4948235198,
+   "IC inf": 0.4901720031,
+   "IC sup": 0.4999852641,
+   "Pop": 0.3161319785,
+   "Rap": 0.7035304545,
+   "Rock": 0.4482524272,
+   "R&B": 0.4439597482,
+   "Country": 0.5622429907,
+   "Δ vs texto": -0.1056761538,
+   "Δ IC inf": -0.1109252947,
+   "Δ IC sup": -0.1005865686
+  },
+  {
+   "modelo": "Rasgos de forma y estilo (41) + XGBoost",
+   "archivo": "M2_xgb_rasgos",
+   "canciones": 50000,
+   "macro-F1": 0.5492686676,
+   "IC inf": 0.5441462183,
+   "IC sup": 0.5540085327,
+   "Pop": 0.3471565284,
+   "Rap": 0.7772250406,
+   "Rock": 0.5102988106,
+   "R&B": 0.497212036,
+   "Country": 0.6144509223,
+   "Δ vs texto": -0.051231006,
+   "Δ IC inf": -0.0561018881,
+   "Δ IC sup": -0.0467674447
+  },
+  {
+   "modelo": "MiniLM congelado + regresión logística",
+   "archivo": "M4_minilm_lr",
+   "canciones": 50000,
+   "macro-F1": 0.558085935,
+   "IC inf": 0.5533203299,
+   "IC sup": 0.5632829802,
+   "Pop": 0.345534407,
+   "Rap": 0.742930212,
+   "Rock": 0.5511001236,
+   "R&B": 0.5177149682,
+   "Country": 0.6331499641,
+   "Δ vs texto": -0.0424137386,
+   "Δ IC inf": -0.0465903328,
+   "Δ IC sup": -0.0381127701
+  },
+  {
+   "modelo": "TF-IDF + regresión logística",
+   "archivo": "M1_tfidf_lr_grilla",
+   "canciones": 50000,
+   "macro-F1": 0.6004996736,
+   "IC inf": 0.5959092585,
+   "IC sup": 0.6054829102,
+   "Pop": 0.3854742774,
+   "Rap": 0.7972154054,
+   "Rock": 0.5733912131,
+   "R&B": 0.5637013626,
+   "Country": 0.6827161093,
+   "Δ vs texto": null,
+   "Δ IC inf": null,
+   "Δ IC sup": null
+  },
+  {
+   "modelo": "TF-IDF + rasgos, misma regresión",
+   "archivo": "M1_tfidf_lr_rasgos",
+   "canciones": 50000,
+   "macro-F1": 0.6165310959,
+   "IC inf": 0.6118860565,
+   "IC sup": 0.6214227582,
+   "Pop": 0.4102162332,
+   "Rap": 0.8074921956,
+   "Rock": 0.5874903326,
+   "R&B": 0.576124031,
+   "Country": 0.7013326872,
+   "Δ vs texto": 0.0160314223,
+   "Δ IC inf": 0.0129671092,
+   "Δ IC sup": 0.0189493651
+  },
+  {
+   "modelo": "MiniLM con ajuste fino",
+   "archivo": "M5_minilm_afinado",
+   "canciones": 50000,
+   "macro-F1": 0.6041629206,
+   "IC inf": 0.5993420035,
+   "IC sup": 0.6097182683,
+   "Pop": 0.3988457178,
+   "Rap": 0.7843699056,
+   "Rock": 0.5780601527,
+   "R&B": 0.5596073671,
+   "Country": 0.6999314599,
+   "Δ vs texto": 0.0036632471,
+   "Δ IC inf": -0.0004919781,
+   "Δ IC sup": 0.0075231929
+  }
+ ],
+ "aporte_rasgos": [
+  {
+   "genero": "Pop",
+   "F1 sin rasgos": 0.3854742774,
+   "F1 con rasgos": 0.4102162332,
+   "Δ F1": 0.0247419558,
+   "IC inf": 0.018629596,
+   "IC sup": 0.0313153666,
+   "excluye 0": true
+  },
+  {
+   "genero": "Rap",
+   "F1 sin rasgos": 0.7972154054,
+   "F1 con rasgos": 0.8074921956,
+   "Δ F1": 0.0102767902,
+   "IC inf": 0.0065515624,
+   "IC sup": 0.0145641348,
+   "excluye 0": true
+  },
+  {
+   "genero": "Rock",
+   "F1 sin rasgos": 0.5733912131,
+   "F1 con rasgos": 0.5874903326,
+   "Δ F1": 0.0140991195,
+   "IC inf": 0.0091923499,
+   "IC sup": 0.0193505901,
+   "excluye 0": true
+  },
+  {
+   "genero": "R&B",
+   "F1 sin rasgos": 0.5637013626,
+   "F1 con rasgos": 0.576124031,
+   "Δ F1": 0.0124226684,
+   "IC inf": 0.007078241,
+   "IC sup": 0.0180108357,
+   "excluye 0": true
+  },
+  {
+   "genero": "Country",
+   "F1 sin rasgos": 0.6827161093,
+   "F1 con rasgos": 0.7013326872,
+   "Δ F1": 0.0186165779,
+   "IC inf": 0.0134845582,
+   "IC sup": 0.0237754659,
+   "excluye 0": true
+  },
+  {
+   "genero": "macro-F1",
+   "F1 sin rasgos": 0.6004996736,
+   "F1 con rasgos": 0.6165310959,
+   "Δ F1": 0.0160314223,
+   "IC inf": 0.0129671092,
+   "IC sup": 0.0189493651,
+   "excluye 0": true
+  }
+ ],
+ "confusion": {
+  "generos": [
+   "Pop",
+   "Rap",
+   "Rock",
+   "R&B",
+   "Country"
+  ],
+  "cantidades": [
+   [
+    3694,
+    482,
+    2568,
+    1855,
+    1401
+   ],
+   [
+    426,
+    7959,
+    462,
+    1022,
+    131
+   ],
+   [
+    1958,
+    204,
+    6010,
+    518,
+    1310
+   ],
+   [
+    1878,
+    1163,
+    791,
+    5440,
+    728
+   ],
+   [
+    1210,
+    159,
+    1132,
+    466,
+    7033
+   ]
+  ]
+ },
+ "sin_pop": [
+  {
+   "genero": "Rap",
+   "F1 con pop": 0.8169361047,
+   "F1 sin pop": 0.8151620135,
+   "Δ F1": -0.0017740912,
+   "IC inf": -0.003990435,
+   "IC sup": 0.0004736664,
+   "recall con pop": 0.7959,
+   "recall sin pop": 0.8,
+   "% predicho como pop": 0.0426
+  },
+  {
+   "genero": "Rock",
+   "F1 con pop": 0.6534384344,
+   "F1 sin pop": 0.6960492166,
+   "Δ F1": 0.0426107822,
+   "IC inf": 0.0374818146,
+   "IC sup": 0.0481066065,
+   "recall con pop": 0.601,
+   "recall sin pop": 0.7241,
+   "% predicho como pop": 0.1958
+  },
+  {
+   "genero": "R&B",
+   "F1 con pop": 0.6236386564,
+   "F1 sin pop": 0.6643976898,
+   "Δ F1": 0.0407590333,
+   "IC inf": 0.0352566465,
+   "IC sup": 0.0467226458,
+   "recall con pop": 0.544,
+   "recall sin pop": 0.6442,
+   "% predicho como pop": 0.1878
+  },
+  {
+   "genero": "Country",
+   "F1 con pop": 0.7325278617,
+   "F1 sin pop": 0.7381778527,
+   "Δ F1": 0.005649991,
+   "IC inf": 0.0014666758,
+   "IC sup": 0.0095590255,
+   "recall con pop": 0.7033,
+   "recall sin pop": 0.7446,
+   "% predicho como pop": 0.121
+  },
+  {
+   "genero": "promedio",
+   "F1 con pop": 0.7066352643,
+   "F1 sin pop": 0.7284466931,
+   "Δ F1": 0.0218114288,
+   "IC inf": 0.0195503607,
+   "IC sup": 0.0242846125,
+   "recall con pop": 0.66105,
+   "recall sin pop": 0.728225,
+   "% predicho como pop": 0.1368
+  }
+ ],
+ "destino_pop": {
+  "Rap": 0.0592,
+  "Rock": 0.4195,
+  "R&B": 0.3253,
+  "Country": 0.196
+ },
+ "vecinos": {
+  "embeddings": {
+   "pureza": [
+    {
+     "genero": "Pop",
+     "pureza": 0.23257,
+     "IC inf": 0.2301574848,
+     "IC sup": 0.2351610749
+    },
+    {
+     "genero": "Rap",
+     "pureza": 0.65912,
+     "IC inf": 0.6525894797,
+     "IC sup": 0.6653909808
+    },
+    {
+     "genero": "Rock",
+     "pureza": 0.352645,
+     "IC inf": 0.3464990605,
+     "IC sup": 0.3584170969
+    },
+    {
+     "genero": "R&B",
+     "pureza": 0.39415,
+     "IC inf": 0.3893358592,
+     "IC sup": 0.3990969526
+    },
+    {
+     "genero": "Country",
+     "pureza": 0.398885,
+     "IC inf": 0.391560745,
+     "IC sup": 0.4057923163
+    }
+   ],
+   "composicion": {
+    "Pop": {
+     "Pop": 0.2326,
+     "Rap": 0.1367,
+     "Rock": 0.1845,
+     "R&B": 0.2626,
+     "Country": 0.1837
+    },
+    "Rap": {
+     "Pop": 0.0702,
+     "Rap": 0.6591,
+     "Rock": 0.061,
+     "R&B": 0.1558,
+     "Country": 0.0539
+    },
+    "Rock": {
+     "Pop": 0.1913,
+     "Rap": 0.1289,
+     "Rock": 0.3526,
+     "R&B": 0.1585,
+     "Country": 0.1687
+    },
+    "R&B": {
+     "Pop": 0.1841,
+     "Rap": 0.1887,
+     "Rock": 0.0991,
+     "R&B": 0.3942,
+     "Country": 0.1339
+    },
+    "Country": {
+     "Pop": 0.1646,
+     "Rap": 0.1088,
+     "Rock": 0.1366,
+     "R&B": 0.1912,
+     "Country": 0.3989
+    }
+   }
+  },
+  "topicos": {
+   "pureza": [
+    {
+     "genero": "Pop",
+     "pureza": 0.25945,
+     "IC inf": 0.2568563875,
+     "IC sup": 0.2620797628
+    },
+    {
+     "genero": "Rap",
+     "pureza": 0.6378,
+     "IC inf": 0.6313956877,
+     "IC sup": 0.6443449694
+    },
+    {
+     "genero": "Rock",
+     "pureza": 0.38439,
+     "IC inf": 0.378929016,
+     "IC sup": 0.3896066667
+    },
+    {
+     "genero": "R&B",
+     "pureza": 0.329735,
+     "IC inf": 0.3250667679,
+     "IC sup": 0.3344715713
+    },
+    {
+     "genero": "Country",
+     "pureza": 0.430995,
+     "IC inf": 0.423845387,
+     "IC sup": 0.4377182208
+    }
+   ],
+   "composicion": {
+    "Pop": {
+     "Pop": 0.2595,
+     "Rap": 0.0844,
+     "Rock": 0.2382,
+     "R&B": 0.2085,
+     "Country": 0.2095
+    },
+    "Rap": {
+     "Pop": 0.0885,
+     "Rap": 0.6378,
+     "Rock": 0.0788,
+     "R&B": 0.1533,
+     "Country": 0.0416
+    },
+    "Rock": {
+     "Pop": 0.228,
+     "Rap": 0.0629,
+     "Rock": 0.3844,
+     "R&B": 0.1302,
+     "Country": 0.1944
+    },
+    "R&B": {
+     "Pop": 0.2237,
+     "Rap": 0.1553,
+     "Rock": 0.1467,
+     "R&B": 0.3297,
+     "Country": 0.1446
+    },
+    "Country": {
+     "Pop": 0.2047,
+     "Rap": 0.0356,
+     "Rock": 0.1969,
+     "R&B": 0.1317,
+     "Country": 0.431
+    }
+   }
+  }
+ },
+ "por_epoca": {
+  "Clase mayoritaria": {
+   "hasta 2009": 0.10546592824464243,
+   "2010–2014": 0.07382569735510912,
+   "2015–2022": 0.05354671919241659
+  },
+  "Forma pura (24 rasgos) + XGBoost": {
+   "hasta 2009": 0.5160922951158405,
+   "2010–2014": 0.5038666009288949,
+   "2015–2022": 0.47914669319731223
+  },
+  "Rasgos de forma y estilo (41) + XGBoost": {
+   "hasta 2009": 0.5491342396146264,
+   "2010–2014": 0.5465125365908472,
+   "2015–2022": 0.5406572304536489
+  },
+  "MiniLM congelado + regresión logística": {
+   "hasta 2009": 0.5338467321458271,
+   "2010–2014": 0.5495089214572398,
+   "2015–2022": 0.5561517237237721
+  },
+  "TF-IDF + regresión logística": {
+   "hasta 2009": 0.5797982585058907,
+   "2010–2014": 0.5949893386750782,
+   "2015–2022": 0.5993492809072335
+  },
+  "TF-IDF + rasgos, misma regresión": {
+   "hasta 2009": 0.6069253488063856,
+   "2010–2014": 0.6143684932945835,
+   "2015–2022": 0.6120859600247834
+  },
+  "MiniLM con ajuste fino": {
+   "hasta 2009": 0.5735817439240707,
+   "2010–2014": 0.6036414958255213,
+   "2015–2022": 0.6048785121684991
+  },
+  "canciones": {
+   "hasta 2009": 9174.0,
+   "2010–2014": 5642.0,
+   "2015–2022": 35178.0
+  }
+ },
+ "ajuste_vs_congelado": [
+  {
+   "genero": "Pop",
+   "F1 congelado": 0.345534407,
+   "F1 con ajuste fino": 0.3988457178,
+   "Δ F1": 0.0533113108,
+   "IC inf": 0.0439661662,
+   "IC sup": 0.0620179471,
+   "excluye 0": true
+  },
+  {
+   "genero": "Rap",
+   "F1 congelado": 0.742930212,
+   "F1 con ajuste fino": 0.7843699056,
+   "Δ F1": 0.0414396937,
+   "IC inf": 0.0363758908,
+   "IC sup": 0.0467705443,
+   "excluye 0": true
+  },
+  {
+   "genero": "Rock",
+   "F1 congelado": 0.5511001236,
+   "F1 con ajuste fino": 0.5780601527,
+   "Δ F1": 0.0269600291,
+   "IC inf": 0.0200048687,
+   "IC sup": 0.0346492233,
+   "excluye 0": true
+  },
+  {
+   "genero": "R&B",
+   "F1 congelado": 0.5177149682,
+   "F1 con ajuste fino": 0.5596073671,
+   "Δ F1": 0.041892399,
+   "IC inf": 0.0338812084,
+   "IC sup": 0.0499533286,
+   "excluye 0": true
+  },
+  {
+   "genero": "Country",
+   "F1 congelado": 0.6331499641,
+   "F1 con ajuste fino": 0.6999314599,
+   "Δ F1": 0.0667814958,
+   "IC inf": 0.0596452699,
+   "IC sup": 0.0737585645,
+   "excluye 0": true
+  },
+  {
+   "genero": "macro-F1",
+   "F1 congelado": 0.558085935,
+   "F1 con ajuste fino": 0.6041629206,
+   "Δ F1": 0.0460769857,
+   "IC inf": 0.0420573729,
+   "IC sup": 0.0500534658,
+   "excluye 0": true
+  }
+ ],
+ "m1_grilla_C": [
+  {
+   "partición": 0,
+   "C = 0.5": 0.5981307993,
+   "C = 1": 0.6013217486,
+   "C = 2": 0.5944539464,
+   "C = 4": 0.587010298,
+   "C = 8": 0.5733908531,
+   "C = 16": 0.5622162229,
+   "C elegido": 1.0
+  },
+  {
+   "partición": 1,
+   "C = 0.5": 0.606231317,
+   "C = 1": 0.6043221793,
+   "C = 2": 0.5991367195,
+   "C = 4": 0.5921394391,
+   "C = 8": 0.5839092048,
+   "C = 16": 0.5671701158,
+   "C elegido": 0.5
+  },
+  {
+   "partición": 2,
+   "C = 0.5": 0.6074914174,
+   "C = 1": 0.6101699298,
+   "C = 2": 0.604740632,
+   "C = 4": 0.5988568211,
+   "C = 8": 0.5849875967,
+   "C = 16": 0.574898636,
+   "C elegido": 1.0
+  },
+  {
+   "partición": 3,
+   "C = 0.5": 0.5947644385,
+   "C = 1": 0.6023897563,
+   "C = 2": 0.5960257055,
+   "C = 4": 0.5890485482,
+   "C = 8": 0.5800041396,
+   "C = 16": 0.5673145203,
+   "C elegido": 1.0
+  },
+  {
+   "partición": 4,
+   "C = 0.5": 0.597605927,
+   "C = 1": 0.5992691356,
+   "C = 2": 0.5949922472,
+   "C = 4": 0.5883614699,
+   "C = 8": 0.5733882419,
+   "C = 16": 0.564958398,
+   "C elegido": 1.0
+  }
+ ],
+ "m4_grilla_C": [
+  {
+   "partición": 0,
+   "C = 1": 0.5592342431,
+   "C = 4": 0.5606709073,
+   "C = 16": 0.5619587407,
+   "C = 64": 0.5627390206,
+   "C = 256": 0.5601645626,
+   "C elegido": 64
+  },
+  {
+   "partición": 1,
+   "C = 1": 0.5608246024,
+   "C = 4": 0.5650374713,
+   "C = 16": 0.5641704669,
+   "C = 64": 0.5663934544,
+   "C = 256": 0.5661215631,
+   "C elegido": 64
+  },
+  {
+   "partición": 2,
+   "C = 1": 0.5528417979,
+   "C = 4": 0.5600491874,
+   "C = 16": 0.5609474349,
+   "C = 64": 0.5611830074,
+   "C = 256": 0.5593056042,
+   "C elegido": 64
+  },
+  {
+   "partición": 3,
+   "C = 1": 0.5603405403,
+   "C = 4": 0.5611201619,
+   "C = 16": 0.5612700307,
+   "C = 64": 0.562812798,
+   "C = 256": 0.5623207503,
+   "C elegido": 64
+  },
+  {
+   "partición": 4,
+   "C = 1": 0.5589971715,
+   "C = 4": 0.5627159736,
+   "C = 16": 0.5616840124,
+   "C = 64": 0.5625648417,
+   "C = 256": 0.5588308788,
+   "C elegido": 4
+  }
+ ],
+ "ajuste_fino": {
+  "modelo": "sentence-transformers/all-MiniLM-L6-v2",
+  "max_tokens": 256,
+  "epocas": 4,
+  "lote": 32,
+  "tasa": 5e-05,
+  "decaimiento": 0.01,
+  "calentamiento": 0.1,
+  "dispositivo": "cuda",
+  "particiones": [
+   {
+    "particion": 0,
+    "macro_f1": 0.6012,
+    "f1_validacion_por_epoca": [
+     0.5531,
+     0.593,
+     0.6081,
+     0.6015
+    ],
+    "epoca_elegida": 3,
+    "segundos": 395
+   },
+   {
+    "particion": 1,
+    "macro_f1": 0.593,
+    "f1_validacion_por_epoca": [
+     0.5934,
+     0.6178,
+     0.6159,
+     0.6069
+    ],
+    "epoca_elegida": 2,
+    "segundos": 395
+   },
+   {
+    "particion": 2,
+    "macro_f1": 0.6071,
+    "f1_validacion_por_epoca": [
+     0.5868,
+     0.6146,
+     0.6008,
+     0.6059
+    ],
+    "epoca_elegida": 2,
+    "segundos": 396
+   },
+   {
+    "particion": 3,
+    "macro_f1": 0.6062,
+    "f1_validacion_por_epoca": [
+     0.5747,
+     0.5813,
+     0.5926,
+     0.6059
+    ],
+    "epoca_elegida": 4,
+    "segundos": 397
+   },
+   {
+    "particion": 4,
+    "macro_f1": 0.6112,
+    "f1_validacion_por_epoca": [
+     0.5899,
+     0.5813,
+     0.603,
+     0.5936
+    ],
+    "epoca_elegida": 3,
+    "segundos": 398
+   }
+  ]
+ }
+}
